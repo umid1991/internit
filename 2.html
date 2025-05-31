@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Viewer — Контент страницы</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .content { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Контент страницы</h1>
+  <div id="content" class="content">
+    Загрузка...
+  </div>
+
+  <script>
+    // Функция для получения параметров URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const id = getQueryParam('id');
+    const contentDiv = document.getElementById('content');
+
+    // Пример данных для разных id
+    const pages = {
+      '1': 'Содержимое для пункта меню 1: Из чего состоит интернет-маркетинг',
+      '2': 'Содержимое для пункта меню 2: Целевая аудитория и конкуренты',
+      '3': 'Содержимое для пункта меню 3: Landing Page',
+      '4': 'Содержимое для пункта меню 4: Веб-аналитика',
+      '5': 'Содержимое для пункта меню 5: SEO',
+      '6': 'Содержимое для пункта меню 6: Социальные сети',
+      '7': 'Содержимое для пункта меню 7: Контент-маркетинг',
+      '8': 'Содержимое для пункта меню 8: Контекстная реклама',
+      '9': 'Содержимое для пункта меню 9: Рассылка',
+      '10': 'Содержимое для пункта меню 10: A/B тестирование',
+    };
+
+    if (id && pages[id]) {
+      contentDiv.textContent = pages[id];
+    } else {
+      contentDiv.textContent = 'Неверный ID или контент не найден.';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-аналитика: Полное руководство</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --dark-color: #5a5c69;
+            --light-color: #f8f9fc;
+            --accent-color: #f6c23e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background-color: #f8f9fa;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .article-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        
+        .img-container {
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .img-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .img-caption {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 0.75rem;
+            padding: 0.5rem;
+            background: var(--light-color);
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .feature-list {
+            margin-left: 1.5rem;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .highlight-box:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(78, 115, 223, 0.1) 0%, rgba(78, 115, 223, 0) 100%);
+            pointer-events: none;
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 1rem 0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: #2e59d9;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        .toc {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .toc a:hover {
+            background: rgba(78, 115, 223, 0.1);
+            color: var(--primary-color);
+            padding-left: 1.2rem;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1.5rem rgba(58, 59, 69, 0.2);
+        }
+        
+        .tool-card h4 {
+            color: var(--primary-color);
+        }
+        
+        .badge-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.35em 0.65em;
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .article-container {
+                padding: 1.5rem;
+            }
+            
+            .hero-section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-chart-line me-2"></i>Веб-Аналитика
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#chto-takoe">Что это?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#preimuschestva">Преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servisy-i-instrumenty">Инструменты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Шапка -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Все ходы записаны: чем занимаются веб-аналитики</h1>
+            <p class="lead">Полное руководство по сбору и анализу данных для вашего бизнеса</p>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <div class="container">
+        <div class="article-container">
+            <p class="lead">Бизнес — это цифры: клиенты, продажи, прибыль. Веб-аналитика в маркетинге изучает, как увеличить эти цифры с помощью интернет-рекламы, сайта и соцсетей.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-container">
+                        <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67ab602ef21deb1d6c45e8fe_67ab6089346b0f20212f29fb/scale_1200" alt="Веб-аналитика" class="img-fluid">
+                        <div class="img-caption">Анализ пользовательского поведения</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-container">
+                        <img src="https://avatars.mds.yandex.net/i?id=b6723d296bc844d2d4b75fba4556fdf5_l-4055439-images-thumbs&n=13" alt="Метрики" class="img-fluid">
+                        <div class="img-caption">Ключевые показатели эффективности</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="toc">
+                <h5><i class="fas fa-list-ul me-2"></i>Содержание:</h5>
+                <ul>
+                    <li><a href="#chto-takoe"><i class="fas fa-chevron-right me-2"></i>Что такое веб-аналитика</a></li>
+                    <li><a href="#preimuschestva"><i class="fas fa-chevron-right me-2"></i>Преимущества веб-аналитики</a></li>
+                    <li><a href="#vidy-web-analitiki"><i class="fas fa-chevron-right me-2"></i>Виды веб-аналитики</a></li>
+                    <li><a href="#servisy-i-instrumenty"><i class="fas fa-chevron-right me-2"></i>Сервисы и инструменты</a></li>
+                    <li><a href="#kak-ispolzovat"><i class="fas fa-chevron-right me-2"></i>Как использовать системы</a></li>
+                    <li><a href="#sovet-eksperta"><i class="fas fa-chevron-right me-2"></i>Совет эксперта</a></li>
+                </ul>
+            </nav>
+
+            <section id="chto-takoe">
+                <h2><i class="fas fa-question-circle me-2"></i>Что такое веб-аналитика</h2>
+                <p>Веб-аналитика — система сбора и анализа данных. Она помогает понять поведение пользователей на сайте и проследить их путь взаимодействия с продуктом. По итогам анализа данных становится понятно, как улучшить продукт или какой-то этап взаимодействия с клиентом.</p>
+                
+                <div class="highlight-box">
+                    <h5><i class="fas fa-lightbulb me-2"></i>Пример из практики:</h5>
+                    <p>Интернет-магазин запустил контекстную рекламу в соцсетях, потратил внушительный бюджет, а продажи всё равно не растут. С помощью веб-аналитики выяснили, что клиенты просто кладут товары в корзину и уходят с сайта. Это может значить, что надо поработать с формой заказа: сделать её короче и понятнее, чтобы клиент мог заполнить все поля за пару минут.</p>
+                </div>
+                
+                <p>В каждой профессии работа с веб-аналитикой выглядит по-разному.</p>
+                
+                <div class="img-container">
+                    <img src="https://rookee.ru/upload/iblock/66e/1.jpg" alt="Применение веб-аналитики" class="img-fluid">
+                    <div class="img-caption">Веб-аналитика нужна специалистам, которые анализируют данные, создают продукты, продвигают их в сети и управляют процессами</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h5><i class="fas fa-book me-2"></i>Материал по теме:</h5>
+                    <p>Анализ данных в Microsoft Power BI. Инструменты, возможности, как использовать, кому подойдёт</p>
+                    <a href="https://practicum.yandex.ru/blog/kak-nachat-rabotat-s-power-bi/?from=blog-practicum-perelinkovka" class="cta-button"><i class="fas fa-external-link-alt me-2"></i>Подробнее</a>
+                </div>
+            </section>
+
+            <section id="preimuschestva">
+                <h2><i class="fas fa-star me-2"></i>Преимущества веб-аналитики</h2>
+                <p>Веб-аналитика сайта помогает решать сразу несколько задач:</p>
+                <ul class="feature-list">
+                    <li>Найти и исследовать целевую аудиторию;</li>
+                    <li>Построить <a href="https://practicum.yandex.ru/blog/chto-takoe-voronka-prodazh/">воронку продаж</a> — путь клиента от первого касания с продуктом до кнопки «Оформить заказ» и повторных покупок;</li>
+                    <li>Найти слабые и сильные места в бизнес-процессах;</li>
+                    <li>Улучшить <a href="https://practicum.yandex.ru/blog/chto-takoe-konversiya-i-kak-ee-poschitat/">показатели конверсии</a> на разных этапах;</li>
+                    <li>Оптимизировать бюджет по каналам привлечения, чтобы тратить деньги на продвижение эффективно и осмысленно;</li>
+                    <li>Увидеть, какие тренды есть на рынке, и перенять полезные практики у конкурентов.</li>
+                </ul>
+                
+                <p>Если правильно настроить веб-аналитику, можно автоматизировать процессы сбора данных со всех площадок, анализ и визуализацию в виде отчётов и графиков. Это позволит обойти конкурентов даже небольшой компании со скромным маркетинговым бюджетом. В сети конкуренция за каждого клиента выше, чем офлайн, поэтому действовать нужно быстро, но осмысленно, опираясь на большие данные и точные цифры.</p>
+                
+                <div class="highlight-box text-center bg-primary text-white">
+                    <h4><i class="fas fa-graduation-cap me-2"></i>Получите профессию интернет-маркетолога за 7 месяцев</h4>
+                    <p>Сможете сделать и добавить в портфолио от 13 проектов, будете учиться с поддержкой экспертов из Яндекса, VK, Авито, Сбера. Получите помощь в поиске работы.</p>
+                    <a href="https://practicum.yandex.ru/internet-marketing-start/?from=blog-practicum" class="cta-button bg-white text-primary"><i class="fas fa-play me-2"></i>Начать учиться бесплатно</a>
+                </div>
+            </section>
+
+            <section id="vidy-web-analitiki">
+                <h2><i class="fas fa-project-diagram me-2"></i>Виды веб-аналитики</h2>
+                <p>В зависимости от целей и масштабов бизнеса используют разные виды аналитики:</p>
+                
+                <div class="tool-card">
+                    <h4><i class="fas fa-route me-2"></i>Сквозная аналитика</h4>
+                    <p>Её главная цель — проследить путь клиента, от клика по рекламному баннеру до покупки. Для этого используют верхнеуровневый анализ — изучают только целевые действия клиента, а не их причины. Целевыми действиями могут быть клик по объявлению, переход на сайт, оформление заказа. Аналитик как бы встаёт на место клиента, чтобы понять, где искать новых и как их привлечь.</p>
+                </div>
+                
+                <div class="tool-card">
+                    <h4><i class="fas fa-network-wired me-2"></i>Комплексная аналитика</h4>
+                    <p>Отвечает за сбор и анализ статистических данных, которые получают из разных источников:</p>
+                    <ul class="feature-list">
+                        <li>Счётчики посетителей на сайте;</li>
+                        <li>Лог-анализаторы сканируют страницу сайта и показывают, какие блоки обеспечивают приток новых пользователей;</li>
+                        <li><a href="https://practicum.yandex.ru/blog/chto-takoe-crm-sistema-i-kak-ih-vybirat/">CRM-системы</a> показывают, как действие клиента на каждом этапе отражается на эффективности всего бизнеса;</li>
+                        <li>Кол-трекинг помогает отслеживать входящие звонки от клиентов из разных рекламных каналов;</li>
+                        <li>SEO-аудиторы оценивают позиции сайта в поисковых системах и указывают на проблемы, которые мешают подняться выше.</li>
+                    </ul>
+                    <p>Небольшие компании часто используют отдельные инструменты — данные Яндекс Метрики, Google Analytics, рекламных кабинетов, кол-трекинг, которые со временем объединяются в систему сквозной аналитики.</p>
+                </div>
+            </section>
+
+            <section id="servisy-i-instrumenty">
+                <h2><i class="fas fa-tools me-2"></i>Основные сервисы и инструменты веб-аналитики</h2>
+                <p>В качестве инструментов веб-аналитики используют Яндекс Метрику и Google Analytics, сервисы комплексной аналитики, BI и анализ конкурентной среды.</p>
+                
+                <h3><i class="fas fa-layer-group me-2"></i>Базовые сервисы</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tool-card">
+                            <h4><i class="fab fa-yandex me-2"></i>Яндекс Метрика</h4>
+                            <span class="badge badge-custom mb-2">Бесплатно</span>
+                            <p>Система веб-аналитики Яндекса ориентирована на анализ целевых действий клиента и предлагает бизнесу базу стандартных отчётов и инструментов для решения задач.</p>
+                            <div class="img-container">
+                                <img src="https://quasa.io/storage/images/news/XI8xBkiEY0m6OakkvCa6D2yGELfbcUjuFeiYHO3R.png" alt="Яндекс Метрика" class="img-fluid">
+                                <div class="img-caption">Личный кабинет Яндекс Метрики</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tool-card">
+                            <h4><i class="fab fa-google me-2"></i>Google Analytics</h4>
+                            <span class="badge badge-custom mb-2">Бесплатно</span>
+                            <p>Широкий набор функций для анализа трафика и конверсии, А/В тестирования, дашбордов и возможностей для интеграции отчётов из других сервисов.</p>
+                            <div class="img-container">
+                                <img src="https://for24.ru/uploads/posts/2018-10/1540902549_1.jpg" alt="Google Analytics" class="img-fluid">
+                                <div class="img-caption">Интерфейс Google Analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-chart-pie me-2"></i>Комплексная аналитика</h3>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="tool-card">
+                            <h4>Amplitude</h4>
+                            <span class="badge badge-custom mb-2">От $1000</span>
+                            <p>Платформа для продуктовой аналитики, которая помогает в деталях построить воронку продаж.</p>
+                            <div class="img-container">
+                                <img src="https://static.tildacdn.com/tild3837-3166-4665-b463-656633333032/Google-Analytics-moc.jpg" alt="Amplitude" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tool-card">
+                            <h4>Calltouch</h4>
+                            <p>Сервис помогает повысить эффективность онлайн-маркетинга и увеличить продажи через интернет-каналы.</p>
+                            <div class="img-container">
+                                <img src="https://cdn-edge.kwork.ru/pics/t3/93/3462994-1575208394.jpg" alt="Calltouch" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tool-card">
+                            <h4>CallTracking.ru</h4>
+                            <p>Отслеживает заказы из всех каналов, включая рекламные баннеры, поиск по ключевым словам или звонки.</p>
+                            <div class="img-container">
+                                <img src="https://i.pinimg.com/originals/19/ae/d6/19aed6efee1aa0fce9432baace200b63.jpg" alt="CallTracking" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-brain me-2"></i>BI (Business intelligence)</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tool-card">
+                            <h4><i class="fas fa-database me-2"></i>OWOX BI</h4>
+                            <p>Сервис позволяет выгружать данные из рекламных кабинетов Google Analytics, Яндекс Метрики и CRM в единое хранилище.</p>
+                            <div class="img-container">
+                                <img src="https://www.driveninsights.com/hubfs/outsourced_finance_department.jpg" alt="OWOX BI" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tool-card">
+                            <h4><i class="fab fa-microsoft me-2"></i>Power BI</h4>
+                            <p>Сервисы бизнес-аналитики Microsoft формируют единые интерактивные отчёты на базе данных из CRM, Excel и лог-анализаторов.</p>
+                            <div class="img-container">
+                                <img src="https://www.glossary-internet.ru/upload/medialibrary/0d6/0d665e443da3eb26a58df734320ccd94.jpg" alt="Power BI" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-chart-line me-2"></i>Анализ конкурентной среды</h3>
+                
+                <div class="tool-card">
+                    <h4>SimilarWeb</h4>
+                    <span class="badge badge-custom mb-2">От 7300 руб/мес</span>
+                    <p>Помогает понять, откуда пользователи приходят на сайт, и сравнить с источниками трафика конкурентов.</p>
+                    <div class="img-container">
+                        <img src="https://avatars.mds.yandex.net/get-ydo/5490072/2a000001916a92f161b6466590eaf6f14f66/diploma" alt="SimilarWeb" class="img-fluid">
+                    </div>
+                </div>
+            </section>
+
+            <section id="kak-ispolzovat">
+                <h2><i class="fas fa-user-cog me-2"></i>Как использовать системы веб-аналитики</h2>
+                <p>Прежде чем внедрить систему, веб-аналитики определяются с тремя главными параметрами: цели, масштаб и бюджет. Если бюджет и масштабы небольшие, например интернет-магазин с 1000 клиентов в месяц, достаточно базовых инструментов в рамках Яндекс Метрики и Google Analytics. Там же настраивают цели, которые планируют отслеживать:</p>
+                <ul class="feature-list">
+                    <li>Количество просмотров;</li>
+                    <li>Посещение определённых страниц;</li>
+                    <li>Конверсия из посетителей в заказчиков.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h5><i class="fas fa-check-circle me-2"></i>Пошаговый план внедрения:</h5>
+                    <ol class="feature-list">
+                        <li>Определите цели аналитики</li>
+                        <li>Выберите подходящие инструменты</li>
+                        <li>Установите счётчики на сайте</li>
+                        <li>Настройте сбор ключевых метрик</li>
+                        <li>Создайте дашборды для визуализации</li>
+                        <li>Регулярно анализируйте данные</li>
+                        <li>Оптимизируйте процессы на основе данных</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="sovet-eksperta">
+                <h2><i class="fas fa-user-tie me-2"></i>Совет эксперта</h2>
+                <div class="highlight-box">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Анна Смирнова, ведущий веб-аналитик</h5>
+                            <p class="mb-0">"Начинайте с малого — внедрите сначала базовые инструменты аналитики (Яндекс.Метрику или Google Analytics), научитесь работать с ними, а затем постепенно добавляйте более сложные системы. Так вы сможете понять, какие именно данные вам действительно нужны для бизнеса, не переплачивая за ненужный функционал."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Анимация при прокрутке
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.tool-card, .img-container, .highlight-box');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Инициализация анимации
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.tool-card, .img-container, .highlight-box').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

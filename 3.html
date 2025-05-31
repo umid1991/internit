@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Analitika Sahifasi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-container {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .carousel-inner img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .iframe-container {
+      position: absolute;
+      top: 200px; /* Carousel balandligiga teng */
+      left: 0;
+      width: 120%;
+      height: calc(100vh - 200px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Carousel (qotib turadi) -->
+  <div class="carousel-container">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://via.placeholder.com/800x200?text=1-Rasm" class="d-block w-100" alt="Rasm 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/800x200?text=2-Rasm" class="d-block w-100" alt="Rasm 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/800x200?text=3-Rasm" class="d-block w-100" alt="Rasm 3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Iframe (veb sahifani ichida ko‘rsatadi) -->
+  <div class="lc-background-empty" data-image-src="">
+    <section id="main-screen-title-1-1" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl lc-text_width">
+    <div class="lc-text-block lc-text-block_size_s38 lc-text-block_bpsize_s38 lc-text-block_font_display lc-text__title">
+    <div class="lc-styled-text">
+    <h1 class="lc-styled-text__text lc-styled-text__text_align_left">Все ходы записаны: чем занимаются веб-аналитики</h1>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="main-screen-subtitle" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Бизнес &mdash; это цифры: клиенты, продажи, прибыль. Веб-аналитика в маркетинге изучает, как увеличить эти цифры с помощью интернет-рекламы, сайта и соцсетей.</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="main-screen-img-1" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_has-thumbnail lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/10116223/521a6db7-ff75-4d66-b5c6-0333ad6fa153/width_1280_q70" srcset="https://avatars.mds.yandex.net/get-lpc/10116223/521a6db7-ff75-4d66-b5c6-0333ad6fa153/width_1280x2_q70 2x" alt="" width="920" height="449" /><img class="lc-picture__full-size-block lc-picture__thumbnail lc-picture__thumbnail_transparent lc-picture__thumbnail_pulsing_false" src="https://avatars.mds.yandex.net/get-lpc/10116223/521a6db7-ff75-4d66-b5c6-0333ad6fa153/lqip" alt="" width="920" height="449" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-button-up">&nbsp;</div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="nav" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">
+    <ul>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#chto-takoe" data-smooth-scroll="true">Что такое веб-аналитика</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#preimuschestva" data-smooth-scroll="true">Преимущества веб-аналитики</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#vidy-web-analitiki" data-smooth-scroll="true">Виды веб-аналитики</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#servisy-i-instrumenty" data-smooth-scroll="true">Основные сервисы и инструменты веб-аналитики</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#kak-ispolzovat" data-smooth-scroll="true">Как использовать системы веб-аналитики</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-web-analitika/#sovet-eksperta" data-smooth-scroll="true">Совет эксперта</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="chto-takoe" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s36 lc-text-block_bpsize_s36 lc-text-block_font_text lc-text__title">
+    <div class="lc-styled-text">
+    <h2 class="lc-styled-text__text lc-styled-text__text_align_left">Что такое веб-аналитика</h2>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Веб-аналитика &mdash; система сбора и анализа данных. Она помогает понять поведение пользователей на сайте и проследить их путь взаимодействия с продуктом. По итогам анализа данных становится понятно, как улучшить продукт или какой-то этап взаимодействия с клиентом.
+    <p>&nbsp;</p>
+    <p>Например, интернет-магазин запустил контекстную рекламу в соцсетях, потратил внушительный бюджет, а продажи всё равно не растут. С помощью веб-аналитики выяснили, что клиенты просто кладут товары в корзину и уходят с сайта. Это может значить, что надо поработать с формой заказа: сделать её короче и понятнее, чтобы клиент мог заполнить все поля за пару минут.</p>
+    <p>В каждой профессии работа с веб-аналитикой выглядит по-разному.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-1" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_has-thumbnail lc-picture_migrated lc-image-lpc__image">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/2fe4d215-c30c-410c-82ac-19aba408271a/width_1280_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/2fe4d215-c30c-410c-82ac-19aba408271a/width_1280x2_q70 2x" alt="Веб-аналитика нужна специалистам, которые анализируют данные, создают продукты, продвигают их в сети и управляют процессами" width="920" height="650" /><img class="lc-picture__full-size-block lc-picture__thumbnail lc-picture__thumbnail_transparent lc-picture__thumbnail_pulsing_false" src="https://avatars.mds.yandex.net/get-lpc/1527204/2fe4d215-c30c-410c-82ac-19aba408271a/lqip" alt="" width="920" height="650" /></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Веб-аналитика нужна специалистам, которые анализируют данные, создают продукты, продвигают их в сети и управляют процессами</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="visibility-actions visibility-actions_visible">
+    <div class="lc-background-empty" data-image-src="">
+    <section id="linking025" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-group">
+    <div class="lc-group__content lc-group__content_justify_start lpc-section">
+    <section id="kastomnyj-html-3-1" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-custom-html">&nbsp;</div>
+    </section>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="template_layer1" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets lc-body-image-offsets">
+    <div class="lc-body-image lc-body-image_align_left">
+    <div class="lc-body-image__container lc-body-image__container_center lc-body-image__container_layout_row">
+    <div class="lc-body-image__column lc-body-image__column_width_l lc-body-image__column_has-breakpoints">
+    <div class="lc-body-image__content">
+    <div class="lc-body-image__title">
+    <div class="lc-text-block lc-text-block_size_custom lc-text-block_bpsize_custom lc-text-block_font_text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Материал по&nbsp;теме:</div>
+    </div>
+    </div>
+    </div>
+    <div class="lc-body-image__description">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Анализ данных в Microsoft Power BI. Инструменты, возможности, как использовать, кому подойдёт</div>
+    </div>
+    </div>
+    </div>
+    <div class="lc-body-image__buttons">
+    <section id="" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets lc-offsets_padding-top_none lc-offsets_padding-bottom_none">
+    <div class="lc-button-list lc-button-list_align_left">
+    <div class="lc-button-list__container">
+    <div class="lc-button2__under">&nbsp;</div>
+    <div class="lc-styled-text"><span class="lc-styled-text__text lc-styled-text__text_align_center">Подробнее</span></div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    <div class="lc-body-image__image-wrapper lc-body-image__image-wrapper_position_center">
+    <div class="lc-body-image__image lc-body-image__image_align_left">
+    <div class="lc-picture lc-picture_migrated lc-body-image__image-src">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1520633/a66760f8-2329-4908-84e9-972b7989e60f/width_480_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1520633/a66760f8-2329-4908-84e9-972b7989e60f/width_480x2_q70 2x" alt="" width="360" height="176" /></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="preimuschestva" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s36 lc-text-block_bpsize_s36 lc-text-block_font_text lc-text__title">
+    <div class="lc-styled-text">
+    <h2 class="lc-styled-text__text lc-styled-text__text_align_left">Преимущества веб-аналитики</h2>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-rich-text lc-rich-text_align_left">
+    <p>Веб-аналитика сайта помогает решать сразу несколько задач: <br /><br />● найти и исследовать целевую аудиторию;<br /><br />● построить <a class="lc-rich-text__link" href="https://practicum.yandex.ru/blog/chto-takoe-voronka-prodazh/" data-smooth-scroll="false">воронку продаж</a> &mdash; путь клиента от первого касания с продуктом до кнопки &laquo;Оформить заказ&raquo; и повторных покупок;<br /><br />● найти слабые и сильные места в бизнес-процессах;<br /><br />● улучшить <a class="lc-rich-text__link" href="https://practicum.yandex.ru/blog/chto-takoe-konversiya-i-kak-ee-poschitat/" target="_blank" data-smooth-scroll="false">показатели конверсии</a> на разных этапах;<br /><br />● оптимизировать бюджет по каналам привлечения, чтобы тратить деньги на продвижение эффективно и осмысленно;<br /><br />● увидеть, какие тренды есть на рынке, и перенять полезные практики у конкурентов. <br /><br />Если правильно настроить веб-аналитику, можно автоматизировать процессы сбора данных со всех площадок, анализ и визуализацию в виде отчётов и графиков. Это позволит обойти конкурентов даже небольшой компании со скромным маркетинговым бюджетом. В сети конкуренция за каждого клиента выше, чем офлайн, поэтому действовать нужно быстро, но осмысленно, опираясь на большие данные и точные цифры. <br /><br />Курс &laquo;Интернет-маркетолог&raquo; поможет разобраться, как устроены популярные сервисы и какой выбрать, с какими кросс-функциями связана аналитика в компании. Опытные веб-маркетологи научат правильно выстраивать стратегию, настраивать системы веб-аналитики и отдельные функции, формировать дашборды и составлять ТЗ для доработки сервисов под нужные задачи.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="visibility-actions visibility-actions_visible">
+    <div class="lc-background-empty" data-image-src="">
+    <section id="internet-marketing" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-group">
+    <div class="lc-group__content lc-group__content_justify_start lpc-section">
+    <div class="lc-background-empty" data-image-src="">
+    <section id="banner-course" class="lc-section lc-section_is-expanded lc-section_no-margins lpc-section ">
+    <div class="lc-offsets lc-grid2-offsets">
+    <div class="lc-grid2">
+    <div class="lc-grid2-item" data-grid-item-id="false">
+    <div class="lc-background-empty lc-background-empty_inLcGrid2" data-image-src="">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper">
+    <section id="background" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_in-grid2 lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_has-thumbnail lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper"><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1635340/d133adff-f4dc-41e2-9bb3-35506e39bab2/width_1280_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1635340/d133adff-f4dc-41e2-9bb3-35506e39bab2/width_1280x2_q70 2x" alt="" width="920" height="211" /><img class="lc-picture__full-size-block lc-picture__thumbnail lc-picture__thumbnail_transparent lc-picture__thumbnail_pulsing_false" src="https://avatars.mds.yandex.net/get-lpc/1635340/d133adff-f4dc-41e2-9bb3-35506e39bab2/lqip" alt="" width="920" height="211" /></div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    <div class="lc-grid2-item" data-grid-item-id="false">
+    <div class="lc-background-empty lc-background-empty_inLcGrid2" data-image-src="">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper">
+    <section id="picture" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_in-grid2 lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_has-thumbnail lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper"><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1635340/03e77ff3-686e-4e42-b6a4-4a839ab3d58a/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1635340/03e77ff3-686e-4e42-b6a4-4a839ab3d58a/width_2560x2_q70 2x" alt="" width="165" height="165" /><img class="lc-picture__full-size-block lc-picture__thumbnail lc-picture__thumbnail_transparent lc-picture__thumbnail_pulsing_false" src="https://avatars.mds.yandex.net/get-lpc/1635340/03e77ff3-686e-4e42-b6a4-4a839ab3d58a/lqip" alt="" width="165" height="165" /></div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    <div class="lc-grid2-item" data-grid-item-id="false">
+    <div class="lc-background-empty lc-background-empty_inLcGrid2" data-image-src="">
+    <section id="title" class="lc-section lc-section_is-expanded lc-section_no-paddings lc-section_no-margins lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text-block lc-text-block_size_s25 lc-text-block_bpsize_s25 lc-text-block_font_text lc-text-component">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Получите профессию интернет-маркетолога за&nbsp;7 месяцев</div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    <div class="lc-grid2-item" data-grid-item-id="false">
+    <div class="lc-background-empty lc-background-empty_inLcGrid2" data-image-src="">
+    <section id="description" class="lc-section lc-section_is-expanded lc-section_no-paddings lc-section_no-margins lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text-block lc-text-block_size_custom lc-text-block_bpsize_custom lc-text-block_font_text lc-text-component">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><br />Сможете сделать и&nbsp;добавить в&nbsp;портфолио от&nbsp;13 проектов, будете учиться с&nbsp;поддержкой экспертов из&nbsp;Яндекса, VK, Авито, Сбера. Получите помощь в&nbsp;поиске работы.</div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    <div class="lc-grid2-item" data-grid-item-id="false">
+    <div class="lc-background-empty lc-background-empty_inLcGrid2" data-image-src="">
+    <section id="button" class="lc-section lc-section_is-expanded lc-section_no-paddings lc-section_no-margins lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-button-component lc-button-component_in-grid2">
+    <div class="lc-button2__under">&nbsp;</div>
+    <div class="lc-styled-text"><span class="lc-styled-text__text lc-styled-text__text_align_center">Начать учиться бесплатно</span></div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="vidy-web-analitiki" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s36 lc-text-block_bpsize_s36 lc-text-block_font_text lc-text__title">
+    <div class="lc-styled-text">
+    <h2 class="lc-styled-text__text lc-styled-text__text_align_left">Виды веб-аналитики</h2>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-rich-text lc-rich-text_align_left">
+    <p>В зависимости от целей и масштабов бизнеса используют разные виды аналитики: <br /><br />● <strong>Сквозная аналитика.</strong> Её главная цель &mdash; проследить путь клиента, от клика по рекламному баннеру до покупки. Для этого используют верхнеуровневый анализ &mdash; изучают только целевые действия клиента, а не их причины. Целевыми действиями могут быть клик по объявлению, переход на сайт, оформление заказа. Аналитик как бы встаёт на место клиента, чтобы понять, где искать новых и как их привлечь. <br /><br />● <strong>Комплексная аналитика</strong> отвечает за сбор и анализ статистических данных, которые получают из разных источников: <br /><br />- счётчики посетителей на сайте;<br /><br />- лог-анализаторы сканируют страницу сайта и показывают, какие блоки обеспечивают приток новых пользователей;<br /><br />- <a class="lc-rich-text__link" href="https://practicum.yandex.ru/blog/chto-takoe-crm-sistema-i-kak-ih-vybirat/" target="_blank" data-smooth-scroll="false">CRM-системы</a> показывают, как действие клиента на каждом этапе отражается на эффективности всего бизнеса;<br /><br />- кол-трекинг помогает отслеживать входящие звонки от клиентов из разных рекламных каналов;<br /><br />- SEO-аудиторы оценивают позиции сайта в поисковых системах и указывают на проблемы, которые мешают подняться выше. <br /><br />Небольшие компании часто используют отдельные инструменты &mdash; данные Яндекс Метрики, Google Analytics, рекламных кабинетов, кол-трекинг, которые со временем объединяются в систему сквозной аналитики. <br /><br />В рамках больших проектов применяют комплексную аналитику или обе сразу. Это помогает связать разные способы взаимодействия с клиентом в единую цепочку и проанализировать каждый этап подробнее.<br /><br />Например, у компании многоканальный телефон и десятки рекламных кампаний. Операторы после каждого звонка заполняют профиль клиента в CRM-системе, чтобы узнать, откуда он пришёл и насколько доволен сервисом. Потом сравнивают ответы на уровне системы и ответы клиента на разных этапах. Это помогает понять, какие каналы работают лучше и что можно оптимизировать. <br /><br />Так же можно работать и с продуктовыми метриками. Например, выяснить, почему клиенты бросают оформление заказа на определённом шаге. Возможно, в форме слишком много вопросов и приходится тратить лишнее время на заполнение. </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="servisy-i-instrumenty" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s36 lc-text-block_bpsize_s36 lc-text-block_font_text lc-text__title">
+    <div class="lc-styled-text">
+    <h2 class="lc-styled-text__text lc-styled-text__text_align_left">Основные сервисы и инструменты веб-аналитики</h2>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">В качестве инструментов веб-аналитики используют Яндекс Метрику и Google Analytics, сервисы комплексной аналитики, BI и анализ конкурентной среды.</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s28 lc-text-block_bpsize_s28 lc-text-block_font_text lc-text__subtitle">
+    <div class="lc-styled-text">
+    <h6 class="lc-styled-text__text lc-styled-text__text_align_left">Базовые сервисы</h6>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>Яндекс Метрика</strong>
+    <p>&nbsp;</p>
+    <p>Система веб-аналитики Яндекса ориентирована на анализ целевых действий клиента и предлагает бизнесу базу стандартных отчётов и инструментов для решения задач. Например, Вебмастер отслеживает ошибки работы сайта во время посещения поисковых роботов.</p>
+    <p>Внутри системы можно создавать сценарии для посетителей и анализировать разные сегменты товаров и пользователей.</p>
+    <p>По сравнению с Google Analytics здесь меньше возможностей для анализа пользовательского поведения в нестандартных отчётах. Зато Яндекс Метрикой намного проще пользоваться даже новичкам и она легко интегрируется с базами из 1С или CRM.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-3" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper has-borders">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_1600_q70 1600w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_1920_q70 1920w, https://avatars.mds.yandex.net/get-lpc/1527204/c3c829a2-9ce1-4028-8de3-740ef5865f3a/width_2560_q70 2560w" alt="" width="920" height="473" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Личный кабинет в Яндекс Метрике с данными по трафику сайта за неделю</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>Google Analytics</strong>
+    <p>&nbsp;</p>
+    <p>Из плюсов системы комплексной аналитики от Google можно назвать широкий набор функций для анализа трафика и конверсии, А/В тестирования, дашбордов и возможностей для интеграции отчётов из других сервисов.</p>
+    <p>Отслеживаемый трафик можно сегментировать по источникам и аудитории, а ещё &mdash; изучать поведение пользователей по разным категориям товаров и услуг: например интернет-магазины одежды или покупатели онлайн-курсов.</p>
+    <p>Интеграция с сервисом Google Trends помогает анализировать, какие запросы в тренде в разные периоды месяца или года, посмотреть на опыт конкурентов и построить свою стратегию.</p>
+    <p>В качестве минусов можно отметить отсутствие одновременного доступа для множества пользователей и интеграции с инструментами таргетированной рекламы.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-4" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper has-borders">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_1600_q70 1600w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_1920_q70 1920w, https://avatars.mds.yandex.net/get-lpc/1527204/429505d8-53b7-4921-8e00-82639da5aba6/width_2560_q70 2560w" alt="" width="920" height="476" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Данные по трафику за неделю в личном кабинете Google Analytics</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-rich-text lc-rich-text_align_left">
+    <p>И у Яндекс Метрики, и у Google Analytics есть собственные <a class="lc-rich-text__link" href="https://yandex.ru/adv/expert/exam/metrika" data-smooth-scroll="false">программы сертификации</a>, благодаря которым веб-аналитики и другие специалисты могут освоить все доступные инструменты и возможности систем для практического применения. Чаще всего используют обе системы, дополняя их специальными сервисами для конкретных задач, например построения воронки продаж или анализа трафика. </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s28 lc-text-block_bpsize_s28 lc-text-block_font_text lc-text__subtitle">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Комплексная аналитика</div>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>Amplitude</strong>
+    <p>&nbsp;</p>
+    <p>Платформа для продуктовой аналитики, которая помогает в деталях построить воронку продаж. На каждом этапе можно проследить, какие каналы и сервисы работают лучше других, что можно улучшить или полностью изменить. Можно выявить клиентов, которые лояльны компании и приносят больше прибыли, чтобы в первую очередь ориентироваться на них.</p>
+    <p>Минусы платформы &mdash; цена от $1000 за платную версию для больших команд и не слишком отзывчивая поддержка. Поэтому для работы с Amplitude желательно иметь в штате аналитика, который сможет сам настроить нужные опции, в том числе на уровне кода.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-5" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper has-borders">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_1600_q70 1600w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_1920_q70 1920w, https://avatars.mds.yandex.net/get-lpc/1527204/1fbfc529-0d0e-4430-89d0-a5b70975abe8/width_2560_q70 2560w" alt="" width="920" height="519" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">В личном кабинете Amplitude можно выбрать данные по любому из этапов взаимодействия пользователя с сайтом</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>Calltouch</strong>
+    <p>&nbsp;</p>
+    <p>Сервис помогает повысить эффективность онлайн-маркетинга и увеличить продажи через интернет-каналы.</p>
+    <p>Его главная особенность &mdash; высокая точность данных: погрешность составляет менее 1%. Это важно компаниям, которые используют много каналов и хотят точно знать, сколько посетителей приносит каждый из них. Для этого для каждого канала создают отдельный номер телефона и считают, сколько из него пришло звонков.</p>
+    <p>Сервис присваивает каждому посетителю персональный номер и собирает информацию, по каким ключевым словам посетители приходят.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-6" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper has-borders">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_1600_q70 1600w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_1920_q70 1920w, https://avatars.mds.yandex.net/get-lpc/1220100/a37b5a3e-ab13-4c4c-abe3-059d0553182d/width_2560_q70 2560w" alt="" width="920" height="414" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Личный кабинет сервиса Calltouch с данными о трафике сайта</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>CallTracking.ru</strong>
+    <p>&nbsp;</p>
+    <p>Отслеживает заказы из всех каналов, включая рекламные баннеры, поиск по ключевым словам или звонки. Помогает определить пиковые часы для кол-центра и оценить работу каждого оператора. Интегрируется с виртуальной АТС МТТ и Amber CRM.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-7" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_1600_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1527204/5bed3a81-92c5-4c2a-878d-f8e23d584a33/width_1600_q70 1600w" alt="" width="920" height="445" /></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">В личном кабинете CallTracking можно увидеть общие данные по трафику за разные периоды, а также по разным площадкам. Есть аналитика по заказам и конверсии, бюджету и расходам на интернет-рекламу</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s28 lc-text-block_bpsize_s28 lc-text-block_font_text lc-text__subtitle">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">BI (Business intelligence)</div>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-rich-text lc-rich-text_align_left">
+    <p>Business intelligence &mdash; это группа сервисов, которые переводят необработанные данные в простую и наглядную форму, чтобы их можно было использовать в работе всего бизнеса. <br /><br /><strong>OWOX BI </strong><br /><br />Сервис позволяет выгружать данные из рекламных кабинетов Google Analytics, Яндекс Метрики и CRM в единое хранилище, в котором легко находить нужное с помощью <a class="lc-rich-text__link" href="https://practicum.yandex.ru/blog/chto-takoe-subd/" data-smooth-scroll="false">СУБД</a>. <br /><br />Анализирует все ключевые маркетинговые показатели &mdash; <a class="lc-rich-text__link" href="https://practicum.yandex.ru/blog/chto-takoe-roi-i-kak-ego-schitat/" data-smooth-scroll="false">ROI</a>, LTV, CPA &mdash; и выводит их на одном дашборде, то есть интерактивной онлайн-доске с управляемыми метриками. <br /><br />OWOX BI &mdash; один из немногих инструментов для оценки ROPO (от англ. Research Online Shopping Offline), или того, как каждый из рекламных каналов влияет на продажи и прибыль. Подходит для планирования рекламных бюджетов и маркетинговых прогнозов. <br /><br />У OWOX BI большой набор полезных инструментов и трекеров, но для того, чтобы получить персонализированные отчёты со всеми нужными параметрами, понадобится веб-аналитик или даже веб-разработчик. Есть подсказки и онлайн-поддержка, которые помогут разобраться, а также интеграция с CallTouch, CoMagic, CallTracking.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-8" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_1280_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/ba0b8703-3a31-4362-bda7-ae5f5615f685/width_1280_q70 1280w" alt="" width="920" height="494" /></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-descr" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">В OWOX BI доступны отчёты по источникам трафика, воронке продаж, доходу с различных площадок и другим показателям</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>Power BI</strong>
+    <p>&nbsp;</p>
+    <p>Сервисы бизнес-аналитики Microsoft формируют единые интерактивные отчёты на базе данных из CRM, Excel и лог-анализаторов. Данные можно визуализировать в виде графиков, диаграмм или интерактивных карт.</p>
+    <p>Подходит для презентаций и публичной отчётности в рамках групповых проектов или собраний инвесторов. Есть мобильные приложения для iOS и Android.</p>
+    <p>Главный минус &mdash; для каждого действия за рамками базовых опций требуется доработка кода или даже покупка дополнительного модуля.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-9" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_1280_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/e90082fe-98af-47ab-a1c4-ca6ac5c6972b/width_1280_q70 1280w" alt="" width="920" height="548" /></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Вкладка из Power BI с графиком распределения выручки по брендам за последние три года</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="post-content-text" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s28 lc-text-block_bpsize_s28 lc-text-block_font_text lc-text__subtitle">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Анализ конкурентной среды</div>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left"><strong>SimilarWeb</strong>
+    <p>&nbsp;</p>
+    <p>Помогает понять, откуда пользователи приходят на сайт, и сравнить с источниками трафика конкурентов. Показывает, какие страницы привлекают пользователей больше всего, а какие они сразу покидают.</p>
+    <p>По итогам аудита можно изменить сайт и скорректировать онлайн-стратегию с учётом трендов рынка, перенять успешные практики или, наоборот, занять ту нишу, которая сейчас свободна.</p>
+    <p>Минус &mdash; цена от 7300 до 30 тыс. рублей в месяц, в зависимости от объёмов и задач. Поэтому немногие пользуются сервисом после бесплатного тестового периода в 14 дней.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="izobrazhenie-10" class="lc-section lc-section_is-expanded lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-image-lpc lc-image-lpc_migrated">
+    <div class="lc-image-lpc__component">
+    <div class="lc-picture lc-picture_migrated lc-image-lpc__image">
+    <div class="lc-borders__advanced-borders-wrapper">
+    <div class="lc-borders__component-wrapper has-borders">
+    <div><img class="lc-picture__full-size-block lc-picture__image lc-picture__image_loaded" src="https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_2560_q70" srcset="https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_64_q70 64w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_360_q70 360w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_480_q70 480w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_768_q70 768w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_1280_q70 1280w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_1600_q70 1600w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_1920_q70 1920w, https://avatars.mds.yandex.net/get-lpc/1527204/aabdbb2c-05e6-456d-a6c4-905272c9484b/width_2560_q70 2560w" alt="" width="920" height="440" /></div>
+    </div>
+    <div class="lc-borders__shadow">&nbsp;</div>
+    <div class="lc-borders__border">&nbsp;</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="img-desc" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s16 lc-text-block_bpsize_s16 lc-text-block_font_text lc-text__text">
+    <div class="lc-styled-text">
+    <div class="lc-styled-text__text lc-styled-text__text_align_left">Сравнительный анализ трафика двух сайтов в SimilarWeb</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="lc-background-empty" data-image-src="">
+    <section id="kak-ispolzovat" class="lc-section lpc-section ">
+    <div class="lc-offsets">
+    <div class="lc-text lc-text_align_left">
+    <div class="lc-text lc-text_column_xxl">
+    <div class="lc-text-block lc-text-block_size_s36 lc-text-block_bpsize_s36 lc-text-block_font_text lc-text__title">
+    <div class="lc-styled-text">
+    <h2 class="lc-styled-text__text lc-styled-text__text_align_left">Как использовать системы веб-аналитики</h2>
+    </div>
+    </div>
+    <div class="lc-text-block lc-text-block_size_s20 lc-text-block_bpsize_s20 lc-text-block_font_text lc-text__text">
+    <div class="lc-rich-text lc-rich-text_align_left">
+    <p>Прежде чем внедрить систему, веб-аналитики определяются с тремя главными параметрами: цели, масштаб и бюджет. Если бюджет и масштабы небольшие, например интернет-магазин с 1000 клиентов в месяц, достаточно базовых инструментов в рамках Яндекс Метрики и Google Analytics. Там же настраивают цели, которые планируют отслеживать: <br /><br />● количество просмотров;<br /><br />● посещение определённых страниц;<br /><br />● конверсия из посетителей в заказчиков. <br /><br />На сайте устанавливают счётчик. Он фиксирует посетителей и их IP-адреса, так компания понимает, откуда они приходят. <br /><br />Чтобы проследить весь путь клиента от клика по объявлению до покупки, дополнительно используют сервисы кол-трекинга, анализа трафика и BI. В них сначала отслеживают все касания клиента с продуктом: рекламные объявления, статьи, поисковые запросы, прямой заход на сайт. Потом строят нужный вариант дашборда в BI. <br /><br />Чтобы настроить веб-аналитику правильно, важно выяснить, какие данные и в каком объёме необходимы. Кому-то достаточно знать, что делают посетители на сайте и на каком этапе уходят к конкурентам. С этой задачей справятся Яндекс Метрика и Google Analytics. <br /><br />Когда нужна сквозная аналитика, чтобы видеть все шаги клиента в деталях с момента размещения баннера на сайте и до оплаты заказа, нужно подключать дополнительные сервисы, которые помогут собрать все данные, например Calltracking или Power BI. <br /><br />Готового решения для всех задач не существует, поэтому приходится интегрировать между собой корпоративную CRM, системы и сервисы веб-аналитики. Отдельные функции нужно настраивать для целей бизнеса. Этим занимаются веб-аналитики и разработчики в штате или специалисты на стороне компании-подрядчика. <br /><br />В обоих случаях потребуется написать подробное ТЗ, чтобы получить готовое решение: <br /><br />● какие цели нужно задать, например, увеличить конверсию или число посетителей на сайте;<br /><br />● какие показатели отслеживать &mdash; это может быть трафик с определённых площадок; <br /><br />● какие сервисы подключить, достаточно ли базовой аналитики или нужны ещё системы для кол-трекинга и BI;<br /><br />● какие системы и инструменты нужно связать друг с другом, например Яндекс Аналитика и корпоративная CRM;<br /><br />● что должно содержаться в отчётах и дашбордах: показатели выручки, кликов, конверсии или покупок. <br /><br />Руководители бизнеса хотят от веб-аналитики одного: абсолютно прозрачную картинку, из которой сразу понятно, как увеличить прибыль. На деле в техническом плане всё гораздо сложнее, но некоторые процессы можно автоматизировать, чтобы ускорить работу веб-аналитика. Например, с помощью CRM-системы, которая собирает данные о клиентах на каждом этапе. С её помощью легко отследить каждый звонок и сделку и связать их в единое целое в рамках воронки продаж. <br /><br />Автоматизация займёт от 6 до 12 месяцев, но зато упростит работу с продуктовой и веб-аналитикой на годы. Чтобы сэкономить время и деньги, лучше нанять руководителя проекта внедрения программы. Он грамотно составит ТЗ и проследит за соблюдением сметы и сроков.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
