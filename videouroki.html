@@ -1,71 +1,108 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Видео Уроки - Мастер Математики</title>
+  <title>🎓 Видеоуроки - Мастер Математики</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background: #f8f9fa;
-      padding: 15px 10px;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right top, #000000, #0c0105);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .video-player-section {
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .video-wrapper {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
+      padding: 10px 15px 40px;
     }
+
     iframe {
       width: 100%;
       max-width: 800px;
       height: 450px;
+      border-radius: 5px;
       border: none;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
     }
+
     #videoControls {
       display: flex;
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     #videoControls button {
-      flex: 1 1 30%;
-      min-width: 100px;
+      min-width: 110px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    #videoControls button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      padding-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h2 class="text-center mb-4">🎥 Видео уроки (YouTube плейлист)</h2>
 
-  <div class="video-player-section">
-    <iframe id="videoPlayer" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="header">🎥 Видеоуроки — Интернет-маркетингу</div>
+
+  <div class="video-wrapper">
+
     <div id="videoControls">
-      <button id="prevBtn" class="btn btn-primary">⏮ Назад</button>
-      <a href="index.html"><button id="homeBtn" class="btn btn-secondary">🏠 Главная</button></a>
-      <button id="nextBtn" class="btn btn-primary">⏭ Следующий урок</button>
+      <button id="prevBtn" class="btn btn-outline-primary">⏮ Назад</button>
+      <a href="index.html" class="btn btn-outline-secondary">🏠 Главная</a>
+      <button id="nextBtn" class="btn btn-primary">⏭ Вперед</button>
     </div>
+
+    <iframe id="videoPlayer" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    
   </div>
 
+  <footer>Интернет-маркетингу</footer>
+
   <script>
-    // 📋 Список ID видео (указывайте только последние части ссылок YouTube)
     const videoIds = [
-        "7vh9dLaUZaM",
-        "zwSikeU-STI",
-        "DhMMZ9NaSQY",
-        "Wrgnjv34Y2U",
-        "ZbZx5M4E3iU",
-        "gC4u-6m88tM",
-        "ik1WYJBuAFA",
-        "qB-XFzXcyZ4",
+      "7vh9dLaUZaM",
+      "zwSikeU-STI",
+      "DhMMZ9NaSQY",
+      "Wrgnjv34Y2U",
+      "ZbZx5M4E3iU",
+      "gC4u-6m88tM",
+      "ik1WYJBuAFA",
+      "qB-XFzXcyZ4"
     ];
 
     let currentIndex = 0;
     const videoPlayer = document.getElementById('videoPlayer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const homeBtn = document.getElementById('homeBtn');
 
     function loadVideo(index) {
       const videoId = videoIds[index];
@@ -82,12 +119,6 @@
       loadVideo(currentIndex);
     };
 
-    homeBtn.onclick = () => {
-      currentIndex = 0;
-      loadVideo(currentIndex);
-    };
-
-    // Загрузка первого видео при старте
     loadVideo(currentIndex);
   </script>
 </body>
